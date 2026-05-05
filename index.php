@@ -51,7 +51,7 @@ if ($category_id > 0) {
       <div class="flex-grow-1 ms-4 border-top opacity-25"></div>
     </div>
 
-    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 text-center">
       <?php
       // Lấy tối đa 4 sản phẩm nếu là trang chủ, lấy hết nếu chọn danh mục
       $limit = ($category_id > 0) ? "" : "LIMIT 4";

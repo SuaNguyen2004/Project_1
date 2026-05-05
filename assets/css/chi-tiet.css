@@ -1,0 +1,32 @@
+body {
+  padding-top: 100px !important;
+  background-color: #f8f9fa;
+}
+
+.product-img-main {
+  max-height: 450px;
+  object-fit: contain;
+  transition: transform 0.5s ease;
+}
+
+.product-img-main:hover {
+  transform: scale(1.1);
+}
+
+.related-card img {
+  height: 160px;
+  object-fit: contain;
+}
+
+.related-card:hover {
+  transform: translateY(-5px);
+  transition: 0.3s;
+}
+
+.category-badge {
+  background-color: #ebf5ff;
+  color: #e57a8c;
+  border-radius: 20px;
+  padding: 5px 15px;
+  font-size: 0.85rem;
+}

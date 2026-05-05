@@ -19,44 +19,9 @@ $stmt_related->execute([$product['danh_muc_id'], $id]);
 $related_products = $stmt_related->fetchAll();
 ?>
 
-<style>
-  /* CSS tùy chỉnh bổ trợ cho các hiệu ứng đặc thù */
-  body {
-    padding-top: 100px !important;
-    background-color: #f8f9fa;
-  }
-
-  .product-img-main {
-    max-height: 450px;
-    object-fit: contain;
-    transition: transform 0.4s ease;
-  }
-
-  .product-img-main:hover {
-    transform: scale(1.05);
-  }
-
-  .related-card img {
-    height: 160px;
-    object-fit: contain;
-  }
-
-  .related-card:hover {
-    transform: translateY(-5px);
-    transition: 0.3s;
-  }
-
-  .category-badge {
-    background-color: #ebf5ff;
-    color: #e57a8c;
-    border-radius: 20px;
-    padding: 5px 15px;
-    font-size: 0.85rem;
-  }
-</style>
+<link rel="stylesheet" href="/Project/assets/css/chi-tiet.css">
 
 <div class="container py-4">
-  <!-- Breadcrumb điều hướng (UX gợi ý) -->
   <nav aria-label="breadcrumb" class="mb-4">
     <ol class="breadcrumb">
       <li class="breadcrumb-item"><a href="index.php" class="text-decoration-none">Trang chủ</a></li>
@@ -72,7 +37,7 @@ $related_products = $stmt_related->fetchAll();
         alt="<?php echo htmlspecialchars($product['ten_san_pham']); ?>">
     </div>
 
-    <!-- Thông tin sản phẩm -->
+    <!-- Thông tin Chi tiết sản phẩm -->
     <div class="col-md-7">
       <span class="category-badge d-inline-block mb-3">
         <i class="fas fa-tag me-2"></i><?php echo htmlspecialchars($product['ten_danh_muc']); ?>
@@ -120,9 +85,9 @@ $related_products = $stmt_related->fetchAll();
     </div>
   </div>
 
-  <!-- Sản phẩm cùng loại -->
+  <!--Hiển thị Sản phẩm cùng loại -->
   <?php if (count($related_products) > 0): ?>
-    <div class="mt-5 pt-5 bg-light">
+    <div class="mt-5 pt-5 bg-light text-center">
       <h3 class="fw-bold mb-4 position-relative pb-2 " style="border-bottom: 3px solid #e57a8c; width: fit-content;">
         Sản phẩm cùng danh mục
       </h3>
