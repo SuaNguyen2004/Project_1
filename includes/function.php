@@ -2,7 +2,7 @@
 // Kiểm tra và khởi tạo session nếu chưa có
 if (session_status() === PHP_SESSION_NONE) {
   // Đảm bảo session có hiệu lực cho tất cả các thư mục trong dự án
-  session_set_cookie_params(0, '/test_project/');
+  session_set_cookie_params(0, '/Project/');
   session_start();
 }
 

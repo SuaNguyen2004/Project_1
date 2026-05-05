@@ -1,17 +1,12 @@
 <?php
-// 1. Khởi tạo cấu hình và kết nối database
 require_once 'config/db.php';
 require_once 'includes/function.php';
 
-// 2. Nhúng Header (Đã chứa mở thẻ <html>, <head>, <body> và Navbar)
-// Lưu ý: File header.php phải được dọn dẹp thẻ thừa như tôi đã hướng dẫn trước đó
 include 'includes/header.php';
 
-// 3. Xử lý dữ liệu tìm kiếm và danh mục
 $search = isset($_GET['keyword']) ? trim($_GET['keyword']) : '';
 $category_id = isset($_GET['category']) ? (int)$_GET['category'] : 0;
 
-// Logic truy vấn danh mục để hiển thị theo từng khu vực
 if ($category_id > 0) {
   $sql_cate = "SELECT * FROM danh_muc WHERE id = ?";
   $stmt_cate = $pdo->prepare($sql_cate);
@@ -29,8 +24,8 @@ if ($category_id > 0) {
 
 <link rel="stylesheet" href="/Project/assets/css/index.css">
 
-<div class="container pb-5 bg-light">
-  <!-- Tiêu đề trang động -->
+<div class="container pb-5 bg-light" style="margin-top: 100px;">
+  <!-- Danh sách sản phẩm -->
   <div class="text-center my-5">
     <h2 class="fw-bold display-6" style="color: #2c3e50;">
       <?php
@@ -102,6 +97,6 @@ if ($category_id > 0) {
 </div>
 
 <?php
-// 4. Nhúng Footer (Đã chứa <footer>, các thẻ đóng </body> và </html>)
+
 include 'includes/footer.php';
 ?>

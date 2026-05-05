@@ -1,3 +1,9 @@
+<?php
+if (session_status() === PHP_SESSION_NONE) {
+  session_start();
+}
+?>
+
 <!doctype html>
 <html lang="en">
 
@@ -20,12 +26,12 @@
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg navbar-dark">
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
     <div class="container-fluid px-4">
       <!-- nav-left -->
       <div class="d-flex align-items-center me-auto">
         <button class="btn btn-outline-light me-3 btn-sm">☰ Danh mục</button>
-        <a class="navbar-brand fw-bold" href="#">MINIMART</a>
+        <a class="navbar-brand fw-bold" href="/Project/index.php">MINIMART</a>
       </div>
 
       <!-- nav-middle -->
@@ -46,8 +52,28 @@
 
       <!-- nav-right -->
       <div class="d-flex align-items-center ms-auto">
-        <a class="nav-link text-white me-3" href="#">Trang Chủ</a>
-        <a class="btn btn-outline-light btn-sm" href="#">Đăng nhập</a>
+        <!-- <a class="nav-link text-white me-3" href="#">Trang Chủ</a>
+        <a class="btn btn-outline-light btn-sm" href="/Project/manager/dang-nhap.php">Đăng nhập</a> -->
+        <a href="#" class="nav-link">Trang Chủ</a>
+
+        <?php if (isset($_SESSION['user_id'])): ?>
+          <div class="user-box">
+            <span class="welcome-text">Chào, <a href="#" class="user-name"><?php echo $_SESSION['ho_ten']; ?></a></span>
+
+            <?php if ($_SESSION['vai_tro'] == 'admin'): ?>
+              <a href="/test_project/admin/index.php" class="role-link admin-link">[Quản trị Admin]</a>
+            <?php elseif ($_SESSION['vai_tro'] == 'nhan_vien'): ?>
+              <a href="/test_project/nhan-vien/index.php" class="role-link staff-link">[Nhân viên]</a>
+            <?php else: ?>
+              <a href="#" class="nav-link">🛒 Giỏ hàng</a>
+              <a href="#" class="nav-link">Lịch sử</a>
+            <?php endif; ?>
+
+            <a href="/Project/manager/dang-xuat.php" class="btn-logout" onclick="return confirm('Bạn muốn thoát?')">Thoát</a>
+          </div>
+        <?php else: ?>
+          <a href="/Project/manager/dang-nhap.php" class="nav-link">Đăng nhập</a>
+        <?php endif; ?>
       </div>
     </div>
   </nav>
