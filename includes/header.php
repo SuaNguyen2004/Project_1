@@ -47,7 +47,7 @@ if (session_status() === PHP_SESSION_NONE) {
             class="btn btn-warning rounded-circle position-absolute end-0"
             type="submit"
             style="height: 35px; width: 35px; top: 0">
-            <i class="fas fa-search"></i>
+            <i class="fas fa-search" style="color: #e57a8c"></i>
           </button>
         </form>
       </div>

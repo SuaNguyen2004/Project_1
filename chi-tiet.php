@@ -48,7 +48,7 @@ $related_products = $stmt_related->fetchAll();
 
   .category-badge {
     background-color: #ebf5ff;
-    color: #007bff;
+    color: #e57a8c;
     border-radius: 20px;
     padding: 5px 15px;
     font-size: 0.85rem;
@@ -78,7 +78,7 @@ $related_products = $stmt_related->fetchAll();
         <i class="fas fa-tag me-2"></i><?php echo htmlspecialchars($product['ten_danh_muc']); ?>
       </span>
       <h1 class="display-5 fw-bold text-dark mb-2"><?php echo htmlspecialchars($product['ten_san_pham']); ?></h1>
-      <div class="h2 fw-bold text-danger mb-4"><?php echo formatMoney($product['gia_ban']); ?></div>
+      <div class="h2 fw-bold mb-4" style="color: #e57a8c"><?php echo formatMoney($product['gia_ban']); ?></div>
 
       <div class="p-3 bg-light rounded-3 mb-4 border-start border-4 border-success">
         <h6 class="fw-bold"><i class="fas fa-info-circle me-2"></i>Mô tả sản phẩm:</h6>
@@ -109,8 +109,8 @@ $related_products = $stmt_related->fetchAll();
           </div>
 
           <div class="col-12 col-lg-6">
-            <button type="submit" class="btn btn-success btn-lg w-100 fw-bold rounded-3 py-3">
-              <i class="fas fa-shopping-cart me-2"></i>THÊM VÀO GIỎ HÀNG
+            <button type="submit" class="btn btn-danger btn-lg w-100 fw-bold rounded-3" style="background-color: #e57a8c;">
+              <i class="fas fa-shopping-cart me-2 text-white"></i>THÊM VÀO GIỎ HÀNG
             </button>
           </div>
         </form>
@@ -122,8 +122,8 @@ $related_products = $stmt_related->fetchAll();
 
   <!-- Sản phẩm cùng loại -->
   <?php if (count($related_products) > 0): ?>
-    <div class="mt-5 pt-5">
-      <h3 class="fw-bold mb-4 position-relative pb-2" style="border-bottom: 3px solid #e74c3c; width: fit-content;">
+    <div class="mt-5 pt-5 bg-light">
+      <h3 class="fw-bold mb-4 position-relative pb-2 " style="border-bottom: 3px solid #e57a8c; width: fit-content;">
         Sản phẩm cùng danh mục
       </h3>
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4">
