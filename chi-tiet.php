@@ -67,7 +67,7 @@ $related_products = $stmt_related->fetchAll();
             <label class="form-label fw-bold small">Số lượng mua:</label>
             <div class="input-group" style="width: 140px;">
               <button class="btn btn-outline-secondary" type="button" onclick="changeQty(-1)">-</button>
-              <input type="number" name="so_luong" id="input-qty" class="form-control text-center fw-bold"
+              <input type="number" name="so_luong" id="input-qty" class="form-control text-center fw-bold bg-light"
                 value="1" min="1" max="<?php echo $product['so_luong_kho']; ?>" oninput="validateInput(this)">
               <button class="btn btn-outline-secondary" type="button" onclick="changeQty(1)">+</button>
             </div>

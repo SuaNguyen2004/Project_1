@@ -41,14 +41,13 @@ include 'includes/header.php';
 <div class="container py-5" style="margin-top: 100px;">
   <div class="d-flex align-items-center mb-4">
     <h2 class="fw-bold mb-0"><i class="fas fa-shopping-cart text-warning me-3"></i>Giỏ hàng của bạn</h2>
-    <span class="badge bg-secondary ms-3 rounded-pill"><?php echo count($_SESSION['cart'] ?? []); ?> sản phẩm</span>
   </div>
 
   <?php if (empty($_SESSION['cart'])): ?>
     <div class="text-center py-5 shadow-sm bg-white rounded-4">
       <p class="fs-5 text-muted">Giỏ hàng của bạn đang trống kìa bạn hãy mua gì đó đi.</p>
-      <a href="index.php" class="btn btn-warning rounded-pill px-4 py-2 mt-2">
-        <i class="fas fa-arrow-left me-2"></i>Tiếp tục mua sắm
+      <a href="index.php" class="btn btn-warning px-4 py-2 mt-2">
+        <i class="fas fa-arrow-left me-2" style="color: #000"></i>Tiếp tục mua sắm
       </a>
     </div>
   <?php else: ?>
@@ -90,7 +89,7 @@ include 'includes/header.php';
                   <td class="text-end">
                     <a href="gio-hang.php?action=delete&id=<?php echo $item['id']; ?>"
                       onclick="return confirm('Xóa sản phẩm này khỏi giỏ?')"
-                      class="btn btn-outline-danger btn-sm border-0">
+                      class="btn btn-outline-warning border-0">
                       <i class="fas fa-trash-alt"></i>
                     </a>
                   </td>
@@ -112,23 +111,15 @@ include 'includes/header.php';
           <div class="card-body">
             <h5 class="card-title fw-bold mb-4">Tạm tính</h5>
             <div class="d-flex justify-content-between mb-3">
-              <span class="text-muted">Tổng tiền hàng</span>
+              <span class="fw-bold">Tổng tiền hàng</span>
               <span class="fw-bold"><?php echo formatMoney($total); ?></span>
             </div>
             <div class="d-flex justify-content-between mb-3 border-bottom pb-3">
-              <span class="text-muted">Phí vận chuyển</span>
-              <span class="text-success">Miễn phí</span>
+              <span class="text-success fw-bold">Phí vận chuyển sẽ được tính ở trang thanh toán</span>
             </div>
-            <div class="d-flex justify-content-between align-items-center mb-4">
-              <span class="h5 mb-0 fw-bold">Tổng cộng</span>
-              <span class="h4 mb-0 fw-bold text-danger"><?php echo formatMoney($total); ?></span>
-            </div>
-            <a href="thanh-toan.php" class="btn btn-warning w-100 py-3 fw-bold rounded-3 shadow-sm">
-              TIẾN HÀNH ĐẶT HÀNG <i class="fas fa-chevron-right ms-2"></i>
+            <a href="thanh-toan.php" class="btn btn-warning w-100 py-3 text-uppercase fw-bold rounded-3 shadow-sm">
+              Tiến hành thanh toán <i class="fas fa-chevron-right ms-2" style="color: #000"></i>
             </a>
-            <div class="mt-4 text-center">
-              <img src="assets/images/payment-methods.png" alt="Payments" class="img-fluid opacity-75">
-            </div>
           </div>
         </div>
       </div>

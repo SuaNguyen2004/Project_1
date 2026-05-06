@@ -48,7 +48,7 @@ if ($category_id > 0) {
   <?php foreach ($categories as $cat): ?>
     <div class="d-flex align-items-center mb-4 mt-5">
       <h3 class="category-title h4 mb-0"><?php echo $cat['ten_danh_muc']; ?></h3>
-      <div class="flex-grow-1 ms-4 border-top opacity-25"></div>
+      <div class="flex-grow-1 ms-4 border-top"></div>
     </div>
 
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 text-center">
